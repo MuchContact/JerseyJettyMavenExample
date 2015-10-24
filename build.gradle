@@ -1,0 +1,17 @@
+apply plugin: 'java'
+apply plugin: 'jetty'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'junit:junit:4.11'
+    compile 'com.sun.jersey:jersey-servlet:1.19'
+    compile 'com.sun.jersey:jersey-core:1.19'
+    compile 'com.sun.jersey:jersey-json:1.19'
+
+}
+
+jettyRun.contextPath '/'
+jettyRun.webAppSourceDirectory file("$projectDir/web")
